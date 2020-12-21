@@ -1,0 +1,35 @@
+Заповнити масив простими числами, що не повторюються\hypertarget{md_Markdown_remakelab62_autotoc_md14}{}\doxysubsubsection{1. функція simple\+\_\+mass}\label{md_Markdown_remakelab62_autotoc_md14}
+\begin{DoxyVerb}void simple_mass(int mass[])
+    {
+    int chet = 0;
+    for (int i = 2; chet < LEN; i++)      <- цикл, що перебирає числа 
+    {
+        for (int j = 2; j < i; j++)    <- цикл, що перевіряє чи є число простим
+        {
+            if (i % j == 0) { break; }
+            else {
+                if (i == (j + 1)) 
+                {
+                mass[chet] = i;
+                chet++;
+                }
+                else { continue; }
+                 }
+        }
+    }
+
+    }       
+\end{DoxyVerb}
+ \hypertarget{md_Markdown_remakelab62_autotoc_md15}{}\doxysubsubsection{2. main функція}\label{md_Markdown_remakelab62_autotoc_md15}
+\begin{DoxyVerb}int main()
+{
+    int mass[LEN] = {};     <- створює масив розміром LEN
+    simple_mass(mass);  <- викликає функцію
+    for (int i = 0; i < LEN; i++) <- виводить результат
+    {
+        printf ("%d  ", mass[i]);
+    }
+}
+\end{DoxyVerb}
+ \hypertarget{md_Markdown_remakelab62_autotoc_md16}{}\doxysubsubsection{3. блок-\/схема}\label{md_Markdown_remakelab62_autotoc_md16}
+ 

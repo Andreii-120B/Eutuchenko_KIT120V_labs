@@ -1,0 +1,56 @@
+Центруати заданий рядок з заданим заповнювачем\hypertarget{md_Markdown_remakelab61_autotoc_md10}{}\doxysubsubsection{1. функція centring}\label{md_Markdown_remakelab61_autotoc_md10}
+\begin{DoxyVerb}    void centring(char mass[])
+    {
+
+    int centr = 0;
+    int shetSlov = 0;
+    int firstChar;
+
+    for (int i = 0; i < LEN; i++) <- Цикл, що шукає перший ненульовий символ
+    {
+        if (mass[i] != ' ') 
+        {
+        firstChar = i;
+        break;
+        }
+    }
+
+    for (int i = 0; i < (LEN - 1); i++) <- Цикл, що рахує кількість літер у слові
+    {
+    if (mass[i] != '\0' && mass[i] != ' ') {
+    shetSlov++;
+    }
+
+    if (mass[i] == ' ' && mass[i + 1] != ' ' && mass[i - 1] != ' ') <- Опрацювання виключення, якщо введено декілька слів через " " 
+    {
+        shetSlov++;
+    }
+    }
+
+    centr = ((LEN - shetSlov) / 2);
+    char newmass[LEN];
+
+    for (int i = 0; i < (LEN - 1); i++) <- заповнення порожнього масиву "заповнювачем"
+    {
+        newmass[i] = '_';
+    }
+    for (int i = 0; i < shetSlov - 1; i++) <- заповннея масиву з заповнювачем введеним словом
+    {   
+        newmass[centr + i] = mass[i + firstChar];
+    }
+    for (int i = 0; i < LEN - 1; i++) <- програма зберігає новий масив на місце старого 
+    { 
+    mass[i] = newmass[i];
+    }
+    }
+\end{DoxyVerb}
+ \hypertarget{md_Markdown_remakelab61_autotoc_md11}{}\doxysubsubsection{2. main функція}\label{md_Markdown_remakelab61_autotoc_md11}
+\begin{DoxyVerb}    int main()
+    {
+    char mass[LEN] = "  Ivan  ";  <- введеня слова
+    centring(mass);               <- виклик функції
+    printf("%s\n", mass);
+    }
+\end{DoxyVerb}
+ \hypertarget{md_Markdown_remakelab61_autotoc_md12}{}\doxysubsubsection{3. блок-\/схема}\label{md_Markdown_remakelab61_autotoc_md12}
+ 

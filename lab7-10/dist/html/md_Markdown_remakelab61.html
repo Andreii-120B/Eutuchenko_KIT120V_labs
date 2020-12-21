@@ -1,0 +1,134 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Лабораторна робота № 7: Звіт до завдання 6.1</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Лабораторна робота № 7
+   &#160;<span id="projectnumber">0.1</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Створено системою Doxygen 1.9.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Пошук','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Пошук');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+</div><!-- top -->
+<div class="PageDoc"><div class="header">
+  <div class="headertitle">
+<div class="title">Звіт до завдання 6.1 </div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><p>Центруати заданий рядок з заданим заповнювачем</p>
+<h2><a class="anchor" id="autotoc_md10"></a>
+1. функція centring</h2>
+<pre class="fragment">    void centring(char mass[])
+    {
+
+    int centr = 0;
+    int shetSlov = 0;
+    int firstChar;
+
+    for (int i = 0; i &lt; LEN; i++) &lt;- Цикл, що шукає перший ненульовий символ
+    {
+        if (mass[i] != ' ') 
+        {
+        firstChar = i;
+        break;
+        }
+    }
+
+    for (int i = 0; i &lt; (LEN - 1); i++) &lt;- Цикл, що рахує кількість літер у слові
+    {
+    if (mass[i] != '\0' &amp;&amp; mass[i] != ' ') {
+    shetSlov++;
+    }
+
+    if (mass[i] == ' ' &amp;&amp; mass[i + 1] != ' ' &amp;&amp; mass[i - 1] != ' ') &lt;- Опрацювання виключення, якщо введено декілька слів через " " 
+    {
+        shetSlov++;
+    }
+    }
+
+    centr = ((LEN - shetSlov) / 2);
+    char newmass[LEN];
+
+    for (int i = 0; i &lt; (LEN - 1); i++) &lt;- заповнення порожнього масиву "заповнювачем"
+    {
+        newmass[i] = '_';
+    }
+    for (int i = 0; i &lt; shetSlov - 1; i++) &lt;- заповннея масиву з заповнювачем введеним словом
+    {   
+        newmass[centr + i] = mass[i + firstChar];
+    }
+    for (int i = 0; i &lt; LEN - 1; i++) &lt;- програма зберігає новий масив на місце старого 
+    { 
+    mass[i] = newmass[i];
+    }
+    }
+</pre> <h2><a class="anchor" id="autotoc_md11"></a>
+2. main функція</h2>
+<pre class="fragment">    int main()
+    {
+    char mass[LEN] = "  Ivan  ";  &lt;- введеня слова
+    centring(mass);               &lt;- виклик функції
+    printf("%s\n", mass);
+    }
+</pre> <h2><a class="anchor" id="autotoc_md12"></a>
+3. блок-схема</h2>
+<p><img src="file:///home/andreii/lab/lab07/Markdown/img/lab61" alt="text" class="inline"/> </p>
+</div></div><!-- contents -->
+</div><!-- PageDoc -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Створено системою&#160;<a href="http://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.0
+</small></address>
+</body>
+</html>

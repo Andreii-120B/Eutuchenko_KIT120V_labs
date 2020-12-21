@@ -1,0 +1,140 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Лабораторна робота № 7: Звіт до завдання 6.5</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Лабораторна робота № 7
+   &#160;<span id="projectnumber">0.1</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Створено системою Doxygen 1.9.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Пошук','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Пошук');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+</div><!-- top -->
+<div class="PageDoc"><div class="header">
+  <div class="headertitle">
+<div class="title">Звіт до завдання 6.5 </div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><p>"Виконати циклічне зрушення массиву Н * Н вліво"</p>
+<h2><a class="anchor" id="autotoc_md26"></a>
+1. функція shift</h2>
+<pre class="fragment">void shift(int mas[3][3], const int N)
+{
+        int resmas[N][1];
+     for (int i = 0; i &lt; N; i++) {  &lt;- збереження в резерв
+        resmas[i][0] = mas[i][0];
+    }
+
+
+    for (int i = 0; i &lt; N; i++)
+    {
+        for (int j = 0; j &lt; N; j++)
+        {
+            mas[j][i] = mas[j][i + 1];    &lt;- зрушення 
+        }
+
+ }
+
+ for (int i = 0; i &lt; N; i++) {
+     mas[i][N - 1] = resmas[i][0];     &lt;- занесеня резерву в основний масив
+ }
+
+ for (int i = 0; i &lt; N; i++)
+ {
+     for (int j = 0; j &lt; N; j++)
+     {
+         printf("%d ", mas[i][j]);    &lt;- вивід результуючого масиву
+
+     }printf("\n");
+ }
+</pre> <h2><a class="anchor" id="autotoc_md27"></a>
+2. main функція</h2>
+<pre class="fragment">int main()
+{
+
+    const int N = 3;
+    int mas[N][N];
+    for (int i = 0; i &lt; N; i++)
+    {
+        for (int j = 0; j &lt; N; j++)    &lt;- Заповнення масива
+        {
+            mas[i][j] = rand() % 10;
+        }
+    }
+
+
+    for (int i = 0; i &lt; N; i++)
+    {
+        for (int j = 0; j &lt; N; j++)        &lt;-   вивід масива 
+        {
+            printf("%d ", mas[i][j]);
+        }printf("\n");
+
+
+    }
+    printf("\n");
+    printf("\n");
+    printf("\n");
+    shift(mas, N);
+}
+</pre> <h2><a class="anchor" id="autotoc_md28"></a>
+3. блок-схема</h2>
+</div></div><!-- contents -->
+</div><!-- PageDoc -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Створено системою&#160;<a href="http://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.0
+</small></address>
+</body>
+</html>

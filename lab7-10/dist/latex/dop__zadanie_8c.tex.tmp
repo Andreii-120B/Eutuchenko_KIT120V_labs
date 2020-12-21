@@ -1,0 +1,68 @@
+\hypertarget{dop__zadanie_8c}{}\doxysubsection{Файл src/dop\+\_\+zadanie.c}
+\label{dop__zadanie_8c}\index{src/dop\_zadanie.c@{src/dop\_zadanie.c}}
+
+
+Файл з першим завданням 5 лаборатороної роботи \char`\"{}Реалізувати функцію з варіативною кількістю аргументів\char`\"{}.  
+
+
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdarg.\+h$>$}\newline
+Діаграма включених заголовочних файлів для dop\+\_\+zadanie.\+c\+:
+% FIG 0
+\doxysubsubsection*{Функції}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{dop__zadanie_8c_a5bea8f6e241b556d96a007fcb418ec90}{couples}} (int var,...)
+\begin{DoxyCompactList}\small\item\em Функція, що шукає кількіть пар, де перше число більше другого \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{dop__zadanie_8c_a840291bc02cba5474a4cb46a9b9566fe}{main}} (void)
+\begin{DoxyCompactList}\small\item\em main функція, викликає варіативну функцію \mbox{\hyperlink{dop__zadanie_8c_a5bea8f6e241b556d96a007fcb418ec90}{couples}} \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsubsection{Детальний опис}
+Файл з першим завданням 5 лаборатороної роботи \char`\"{}Реалізувати функцію з варіативною кількістю аргументів\char`\"{}. 
+
+\begin{DoxyAuthor}{Автор}
+Eutuchenko Andreii. 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Дата}
+23-\/nov-\/2020 
+\end{DoxyDate}
+\begin{DoxyVersion}{Версія}
+0.\+1 
+\end{DoxyVersion}
+
+
+\doxysubsubsection{Опис функцій}
+\mbox{\Hypertarget{dop__zadanie_8c_a5bea8f6e241b556d96a007fcb418ec90}\label{dop__zadanie_8c_a5bea8f6e241b556d96a007fcb418ec90}} 
+\index{dop\_zadanie.c@{dop\_zadanie.c}!couples@{couples}}
+\index{couples@{couples}!dop\_zadanie.c@{dop\_zadanie.c}}
+\doxyparagraph{\texorpdfstring{couples()}{couples()}}
+{\footnotesize\ttfamily int couples (\begin{DoxyParamCaption}\item[{int}]{var,  }\item[{}]{... }\end{DoxyParamCaption})}
+
+
+
+Функція, що шукає кількіть пар, де перше число більше другого 
+
+
+\begin{DoxyParams}{Аргументи}
+{\em числа,у} & фарматі (кількість\+\_\+чисел, число а, число б, ... ) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Повертає}
+Логічну відповідь у консоль якщо при введенні чисел виявлено помилку, або НОД, якщо все введено правильно ~\newline
+ 
+\end{DoxyReturn}
+Граф всіх викликів цієї функції\+:
+% FIG 1
+\mbox{\Hypertarget{dop__zadanie_8c_a840291bc02cba5474a4cb46a9b9566fe}\label{dop__zadanie_8c_a840291bc02cba5474a4cb46a9b9566fe}} 
+\index{dop\_zadanie.c@{dop\_zadanie.c}!main@{main}}
+\index{main@{main}!dop\_zadanie.c@{dop\_zadanie.c}}
+\doxyparagraph{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+main функція, викликає варіативну функцію \mbox{\hyperlink{dop__zadanie_8c_a5bea8f6e241b556d96a007fcb418ec90}{couples}} 
+
+Граф всіх викликів цієї функції\+:
+% FIG 2
