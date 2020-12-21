@@ -8,7 +8,8 @@ void main()
 	fraction = (modf(a, &integer))*1000;
 	if (fraction == 0)
 	{
-	printf("Деление на 0 невозможно");
+	
+		printf("Деление на 0 невозможно");
 	
 	}else {
 		a = fraction / integer;

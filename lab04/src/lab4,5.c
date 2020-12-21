@@ -11,10 +11,9 @@ int main()
 		y = x + 1;
 	} else if(0 < x && x < 1) {
 		y = -1 * x + 1;
-	}else{
+	} else{
 		y = x-1;
 	}
 	printf ("%f", y);
-
 return 0;
 }

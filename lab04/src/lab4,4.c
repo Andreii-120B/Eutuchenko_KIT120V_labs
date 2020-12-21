@@ -2,7 +2,7 @@
 int main()
 {
  	double x,y;
- 	x = 0.14;
+ 	x = -1;
  	if (x < -1){
  		y = -1 / x;
  	} else if (-1 < x && x < 1){
